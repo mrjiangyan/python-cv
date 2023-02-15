@@ -36,7 +36,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 
 
 # 设置初始窗口大小
-# cv2.namedWindow("Source", cv2.WINDOW_AUTOSIZE)
+# cv2.namedWindow("Source", cv2.WINDOW_AUTOSIZE)x
 
 cv2.namedWindow("Target", cv2.WINDOW_AUTOSIZE)
 
@@ -44,15 +44,16 @@ cv2.namedWindow("Target", cv2.WINDOW_AUTOSIZE)
 #  前台 rtsp://admin:a12345678@192.168.122.42:554/Streaming/Channels/101
 
 
-# cap = cv2.VideoCapture('rtsp://admin:a12345678@192.168.122.41:554/Streaming/Channels/101')
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture('rtsp://admin:a12345678@192.168.122.41:554/Streaming/Channels/101')
+# cap = cv2.VideoCapture(0)
 waitTime=50
 while (True):
     ret, frame = cap.read()
     # cv2.imshow('Source', frame)
 
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+#     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = faceCascade.detectMultiScale(
         gray,
         scaleFactor=1.1,
